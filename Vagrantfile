@@ -70,7 +70,6 @@ Vagrant.configure("2") do |config|
     sudo echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main 8.4" | sudo tee /etc/apt/sources.list.d/postgresql.list > /dev/null
 
     echo "Importing PostgreSQL key"
-    # wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
     sudo apt-get install curl ca-certificates gnupg
     curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/apt.postgresql.org.gpg
 
